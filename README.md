@@ -9,7 +9,7 @@ To do so, add the following to your app module's `build.gradle` file:
 ```groovy
 dependencies {
     ...
-    compile 'com.farbod.mdutils:mdutils:0.1'
+    compile 'com.farbod.mdutils:mdutils:0.1.1'
 }
 ```
 

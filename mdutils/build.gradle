@@ -43,8 +43,7 @@ dependencies {
 }
 
 publish {
-    // Library will be used in the following format:
-    // '(publishedGroupId):(artifact):(libraryVersion)'
+    // Note format: '(publishedGroupId):(artifact):(libraryVersion)'
     userOrg = 'farbodsalamat-zadeh'
     groupId = 'com.farbod.mdutils'
     artifactId = 'mdutils'
