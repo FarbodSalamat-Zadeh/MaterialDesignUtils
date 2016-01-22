@@ -25,7 +25,7 @@ android {
         minSdkVersion 14
         targetSdkVersion 23
         versionCode 10
-        versionName "0.1"
+        versionName "0.1.1"
     }
     buildTypes {
         release {
@@ -36,9 +36,10 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.android.support:support-annotations:23.1.1'
 }
 
 publish {
@@ -47,7 +48,7 @@ publish {
     userOrg = 'farbodsalamat-zadeh'
     groupId = 'com.farbod.mdutils'
     artifactId = 'mdutils'
-    publishVersion = '0.1'
+    publishVersion = '0.1.1'
     desc = 'A utils library to help with creating Material Design in apps'
     website = 'https://github.com/FarbodSalamat-Zadeh/MaterialDesignUtils'
     issueTracker = "${website}/issues"
