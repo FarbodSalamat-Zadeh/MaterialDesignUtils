@@ -1,4 +1,7 @@
 # MaterialDesignUtils
+
+[![Build Status](https://travis-ci.org/FarbodSalamat-Zadeh/MaterialDesignUtils.svg?branch=master)](https://travis-ci.org/FarbodSalamat-Zadeh/MaterialDesignUtils)
+
 A utilities library to help with implementing Material Design guidelines in apps.
 
 ## Gradle (Android Studio)
