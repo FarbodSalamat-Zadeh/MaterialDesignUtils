@@ -21,7 +21,7 @@ dependencies {
 You are able to convert existing values (color, for example) in your project to reference the MaterialDesignUtils library.
 Here is an example for `colors.xml`:
 
-**Before**
+Before:
 
 ```xml
 <resources>
@@ -29,7 +29,7 @@ Here is an example for `colors.xml`:
 </resources>
 ```
 
-**After**
+After:
 
 ```xml
 <resources>
@@ -38,8 +38,6 @@ Here is an example for `colors.xml`:
 ```
 
 Although you could change these color values one by one, if you have numerous color values and/or want to save time, I would highly recommend looking at the [mdu-file-converter](https://github.com/FarbodSalamat-Zadeh/mdu-file-converter) program I made, which is a Python program you run to automatically convert these values to references to this library.
-
-This is particularly useful if you 
 
 ## Copyright
 
