@@ -24,7 +24,7 @@ import android.support.annotation.StringDef;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
-public class MDColors {
+public final class MDColors {
 
     public static final String LOG_TAG = "MDColors";
 
@@ -61,7 +61,7 @@ public class MDColors {
 
 
     @ColorRes
-    public int getColor(Context context, @ColorGroup int colorGroup, @ColorVariant int colorVariant) {
+    public static int getColor(Context context, @ColorGroup int colorGroup, @ColorVariant int colorVariant) {
         try {
             String name = "mdu_" + colorGroup + "_" + colorVariant;
             return context.getResources().getIdentifier(name, "color", context.getPackageName());
@@ -70,7 +70,5 @@ public class MDColors {
             return 0;
         }
     }
-
-
 
 }
