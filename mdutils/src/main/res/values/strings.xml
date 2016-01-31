@@ -15,5 +15,5 @@
   -->
 
 <resources>
-    <string name="mdu_app_name">MaterialDesignUtils</string>
+    <string name="mdu_lib_name">MaterialDesignUtils</string>
 </resources>
