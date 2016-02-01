@@ -293,4 +293,13 @@
     <color name="mdu_black">#000000</color>
     <color name="mdu_white">#FFFFFF</color>
 
+    <color name="mdu_text_black">#DE000000</color>
+    <color name="mdu_text_black_secondary">#8A000000</color>
+    <color name="mdu_text_black_hint">#61000000</color>
+    <color name="mdu_divider_black">#1F000000</color>
+    <color name="mdu_text_white">#FFFFFFFF</color>
+    <color name="mdu_text_white_secondary">#B3FFFFFF</color>
+    <color name="mdu_text_white_hint">#4DFFFFFF</color>
+    <color name="mdu_divider_white">#1FFFFFFF</color>
+
 </resources>

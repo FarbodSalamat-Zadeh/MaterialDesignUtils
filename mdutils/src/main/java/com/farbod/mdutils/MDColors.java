@@ -19,6 +19,7 @@ package com.farbod.mdutils;
 import android.content.Context;
 import android.content.res.Resources;
 import android.support.annotation.ColorRes;
+import android.support.annotation.IntDef;
 import android.support.annotation.StringDef;
 
 import java.lang.annotation.Retention;
@@ -26,8 +27,9 @@ import java.lang.annotation.RetentionPolicy;
 
 public final class MDColors {
 
-    public static final String LOG_TAG = "MDColors";
-
+    /*
+     * Color groups
+     */
     @StringDef({COLOR_RED, COLOR_PINK, COLOR_PURPLE, COLOR_DEEP_PURPLE,
             COLOR_INDIGO, COLOR_BLUE, COLOR_LIGHT_BLUE, COLOR_CYAN,
             COLOR_TEAL, COLOR_GREEN, COLOR_LIGHT_GREEN, COLOR_LIME,
@@ -49,6 +51,9 @@ public final class MDColors {
             COLOR_BLUE_GREY = "blue_grey", COLOR_BLACK = "black",
             COLOR_WHITE = "white";
 
+    /*
+     * Color variants
+     */
     @StringDef({_50, _100, _200, _300, _400, _500, _600, _700, _800, _900,
             A100, A200, A400, A700})
     @Retention(RetentionPolicy.SOURCE)
@@ -60,11 +65,70 @@ public final class MDColors {
             A200 = "a200", A400 = "a400", A700 = "a700";
 
 
+    /*
+     * Text/divider colors
+     */
+    @StringDef({TEXT_BLACK, TEXT_WHITE})
+    @Retention(RetentionPolicy.SOURCE)
+    public @interface TextColor {}
+
+    public static final String TEXT_BLACK = "black", TEXT_WHITE = "white";
+
+    /*
+     * Text styles
+     */
+    @IntDef({TEXT_PRIMARY, TEXT_SECONDARY, TEXT_HINT, TEXT_DISABLED})
+    @Retention(RetentionPolicy.SOURCE)
+    public @interface TextStyle {}
+
+    public static final int TEXT_PRIMARY = 0, TEXT_SECONDARY = 1,
+            TEXT_HINT = 2, TEXT_DISABLED = 3;
+
+
+    /*
+     * Methods
+     */
+
     @ColorRes
-    public static int getColor(Context context, @ColorGroup int colorGroup, @ColorVariant int colorVariant) {
+    public static int findColor(Context context, @ColorGroup int colorGroup, @ColorVariant int colorVariant) {
         try {
             String name = "mdu_" + colorGroup + "_" + colorVariant;
             return context.getResources().getIdentifier(name, "color", context.getPackageName());
+        } catch (Resources.NotFoundException e) {
+            e.printStackTrace();
+            return 0;
+        }
+    }
+
+    @ColorRes
+    public static int findTextColor(Context context, @TextColor String textColor, @TextStyle int textStyle) {
+        StringBuilder builder = new StringBuilder();
+        builder.append("mdu_text_").append(textColor);
+        switch (textStyle) {
+            case TEXT_PRIMARY:
+                break;
+            case TEXT_SECONDARY:
+                builder.append("_secondary");
+                break;
+            case TEXT_HINT:
+            case TEXT_DISABLED:
+                builder.append("_hint");
+                break;
+        }
+
+        try {
+            return context.getResources().getIdentifier(builder.toString(), "color", context.getPackageName());
+        } catch (Resources.NotFoundException e) {
+            e.printStackTrace();
+            return 0;
+        }
+    }
+
+    @ColorRes
+    public static int findDividerColor(Context context, @TextColor String dividerColor) {
+        try {
+            String resName = "mdu_divider_" + dividerColor;
+            return context.getResources().getIdentifier(resName, "color", context.getPackageName());
         } catch (Resources.NotFoundException e) {
             e.printStackTrace();
             return 0;
