@@ -68,11 +68,9 @@ public final class MDColors {
     /*
      * Text/divider colors
      */
-    @StringDef({TEXT_BLACK, TEXT_WHITE})
+    @StringDef({COLOR_BLACK, COLOR_WHITE})
     @Retention(RetentionPolicy.SOURCE)
     public @interface TextColor {}
-
-    public static final String TEXT_BLACK = "black", TEXT_WHITE = "white";
 
     /*
      * Text styles
@@ -90,7 +88,7 @@ public final class MDColors {
      */
 
     @ColorRes
-    public static int findColor(Context context, @ColorGroup int colorGroup, @ColorVariant int colorVariant) {
+    public static int findColor(Context context, @ColorGroup String colorGroup, @ColorVariant String colorVariant) {
         try {
             String name = "mdu_" + colorGroup + "_" + colorVariant;
             return context.getResources().getIdentifier(name, "color", context.getPackageName());
