@@ -12,7 +12,7 @@ To do so, add the following to your app module's `build.gradle` file:
 ```groovy
 dependencies {
     ...
-    compile 'com.satsuware.lib.mdutils:mdutils:1.0.1'
+    compile 'com.satsuware.lib:mdutils:1.0.2'
 }
 ```
 

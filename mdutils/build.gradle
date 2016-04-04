@@ -24,8 +24,8 @@ android {
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 23
-        versionCode 101
-        versionName "1.0.1"
+        versionCode 102
+        versionName "1.0.2"
     }
     buildTypes {
         release {
@@ -46,9 +46,9 @@ dependencies {
 publish {
     // Note format: '(publishedGroupId):(artifact):(libraryVersion)'
     userOrg = 'farbodsalamat-zadeh'
-    groupId = 'com.satsuware.lib.mdutils'
+    groupId = 'com.satsuware.lib'
     artifactId = 'mdutils'
-    publishVersion = '1.0.1'
+    publishVersion = '1.0.2'
     desc = 'A utils library to help with creating Material Design in apps'
     website = 'https://github.com/FarbodSalamat-Zadeh/MaterialDesignUtils'
     issueTracker = "${website}/issues"
