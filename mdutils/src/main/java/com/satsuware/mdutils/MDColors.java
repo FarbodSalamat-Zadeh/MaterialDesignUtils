@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.farbod.mdutils;
+package com.satsuware.mdutils;
 
 import android.content.Context;
 import android.content.res.Resources;
